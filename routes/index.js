@@ -2,6 +2,8 @@ var express = require('express')
 var multer = require('multer')
 var upload = multer({ dest: './public/data/uploads/' })
 var router = express.Router()
+var FileViewer = require('../lib/FileViewer')
+var ImageViewStrategy = require('../lib/ImageViewStrategy')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -21,8 +23,9 @@ router.post('/', upload.single('uploaded-file'), function (req, res, next) {
   }
 
   const { mimetype, originalname, size, filename } = file
+  const fileViewer = new FileViewer(new ImageViewStrategy())
 
-  const output = `<img src="/data/uploads/${filename}">`
+  const output = fileViewer.displayHTML(`/data/uploads/${filename}`)
   res.render('index', { mimetype, originalname, size, output, error: null })
 })
 
