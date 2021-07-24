@@ -11,9 +11,15 @@
       <input type='submit' value='送信'>
     </form>
 
+    <% if (error) { %> 
+      <p>エラー: <%= error %></p>
+    <% } %>
+
     <h2>内容</h2>
     <p>種類: <%= mimetype %></p>
     <p>名前: <%= originalname %></p>
     <p>サイズ: <%= size %></p>
+
+    <%- output %> 
   </body>
 </html>
