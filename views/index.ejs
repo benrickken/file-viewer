@@ -5,15 +5,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form>
+    <form action='/' method='post' enctype='multipart/form-data'>
       <label>アップロード: </label>
-      <input type='file'>
+      <input type='file' name='uploaded-file'>
       <input type='submit' value='送信'>
     </form>
 
     <h2>内容</h2>
-    <p>種類: <%=  %></p>
-    <p>名前: <%=  %></p>
-    <p>サイズ: <%=  %></p>
+    <p>種類: <%= mimetype %></p>
+    <p>名前: <%= originalname %></p>
+    <p>サイズ: <%= size %></p>
   </body>
 </html>
