@@ -1,9 +1,10 @@
-var express = require('express')
-var multer = require('multer')
-var upload = multer({ dest: './public/data/uploads/' })
-var router = express.Router()
-var FileViewer = require('../lib/FileViewer')
-var ImageViewStrategy = require('../lib/ImageViewStrategy')
+const express = require('express')
+const multer = require('multer')
+const upload = multer({ dest: './public/data/uploads/' })
+const router = express.Router()
+const FileViewer = require('../lib/FileViewer')
+const ImageViewStrategy = require('../lib/ImageViewStrategy')
+const CsvViewStrategy = require('../lib/CsvViewStrategy')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
