@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>File Viewer</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form>
+      <label>アップロード: </label>
+      <input type='file'>
+      <input type='submit' value='送信'>
+    </form>
+
+    <h2>内容</h2>
+    <p>種類: <%=  %></p>
+    <p>名前: <%=  %></p>
+    <p>サイズ: <%=  %></p>
   </body>
 </html>
