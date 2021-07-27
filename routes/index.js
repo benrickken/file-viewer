@@ -22,7 +22,7 @@ router.post('/', upload.single('uploaded-file'), async function (req, res, next)
   }
 
   const { mimetype, originalname, size, path } = file
-  const fileViewer = FileViewerFactory(mimetype)
+  const fileViewer = FileViewerFactory(file)
   const output = await fileViewer.displayHTML(path)
   res.render('index', { mimetype, originalname, size, output, error: null })
 })
